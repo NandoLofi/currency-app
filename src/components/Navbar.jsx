@@ -2,7 +2,7 @@ import React from 'react'
 import { Button, Menu, Typography, Avatar } from 'antd'
 import { Link } from 'react-router-dom'
 import { HomeOutlined, MoneyCollectOutlined, BulbOutlined, FundOutlined, MenuFoldOutlined } from '@ant-design/icons'
-import icon from '../images/Cry'
+import icon from '../images/icon.png'
 export default function Navbar() {
   return (
     <div className='nav-container'>
@@ -11,10 +11,12 @@ export default function Navbar() {
             <Typography.Title level={2} className="logo">
               <Link to="/">Home</Link>
             </Typography.Title>
-            {/* <button className='menu-control-container'>
-              
-            </button> */}
         </div>
+        <Menu theme='dark'>
+          <Menu.Item icon={<HomeOutlined/>}>
+            <Link to="/"></Link>
+          </Menu.Item>
+        </Menu>
     </div>
   )
 }
