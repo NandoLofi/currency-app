@@ -5,10 +5,15 @@ import { HomeOutlined, MoneyCollectOutlined, BulbOutlined, FundOutlined, MenuFol
 
 export default function Navbar() {
   return (
-    <div className='nav__container'>
-        <div className="logo__container">
+    <div className='nav-container'>
+        <div className="logo-container">
             <Avatar />
-            <Typography.Title level={2} className="logo"/>
+            <Typography.Title level={2} className="logo">
+              <Link to="/">Home</Link>
+            </Typography.Title>
+            {/* <button className='menu-control-container'>
+              
+            </button> */}
         </div>
     </div>
   )
