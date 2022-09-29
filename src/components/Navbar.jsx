@@ -7,7 +7,7 @@ export default function Navbar() {
   return (
     <div className='nav-container'>
         <div className="logo-container">
-            <Avatar src={icon} size="large"/>
+            <Avatar src={icon} size="small"/>
             <Typography.Title level={2} className="logo">
               <Link to="/">Home</Link>
             </Typography.Title>
