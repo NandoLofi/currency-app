@@ -1,5 +1,5 @@
 import React from 'react'
-import { Switch, Route, Link, Routes } from 'react-router-dom'
+import { Route, Link, Routes } from 'react-router-dom'
 import { Layout, Typography, Space } from 'antd'
 import { Navbar, Exchanges, Homepage, Currencies, Details, News } from './components'
 import './app.css'
@@ -23,8 +23,15 @@ export default function App() {
           </div>
         </Layout>
       </div>
-      <div className="footer">
-        
+      <div className="footer" leve={5}>
+        <Typography.Title style={{ color: "white", textAlign: "center" }}>
+          Currency Page <br/>
+        </Typography.Title>
+        <Space>
+          <Link to="/" >Home</Link>
+          <Link to="/exchanges" >Exchanges</Link>
+          <Link to="/news" >News</Link>
+        </Space>
       </div>
     </div>
   )
