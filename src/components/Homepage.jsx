@@ -2,10 +2,13 @@ import React from 'react'
 import millify from 'millify'
 import { Typography, Row, Col, Statistic } from 'antd'
 import { Link } from 'react-router-dom'
- 
+import { useGetCurrencyQuery } from '../services/currencyApi'
+
 const { Title } = Typography
 
 export default function Homepage() {
+  const { data, isFetching } = useGetCurrencyQuery();
+  console.log(data)
   return (
     <>
         <Title leve={2} className="heading">Global Currency Stats </Title>

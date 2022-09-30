@@ -9,10 +9,10 @@ import store from "./app/store";
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <Router>
-    <Provider store={store}>
   <React.StrictMode>
+  <Provider store={store}>
     <App />
+  </Provider>
   </React.StrictMode>
-    </Provider>
   </Router>
 );
