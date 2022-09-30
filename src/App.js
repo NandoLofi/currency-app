@@ -22,16 +22,16 @@ export default function App() {
            </Routes>
           </div>
         </Layout>
-      </div>
       <div className="footer" leve={5}>
         <Typography.Title style={{ color: "white", textAlign: "center" }}>
           Currency Page <br/>
         </Typography.Title>
-        <Space>
-          <Link to="/" >Home</Link>
-          <Link to="/exchanges" >Exchanges</Link>
-          <Link to="/news" >News</Link>
-        </Space>
+          <Space>
+            <Link to="/" >Home</Link>
+            <Link to="/exchanges" >Exchanges</Link>
+            <Link to="/news" >News</Link>
+          </Space>
+        </div>
       </div>
     </div>
   )
