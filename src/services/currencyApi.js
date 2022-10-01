@@ -1,4 +1,3 @@
-import axios from "axios";
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 
 
@@ -8,11 +7,11 @@ const apiHeaders = {
 }
 const createRequest = (url)=>({url, headers: apiHeaders})
 
-const BASE_URL = "https://coinranking1.p.rapidapi.com/coins"
+const BASE_URL = "https://coinranking1.p.rapidapi.com"
 
 export const currencyApi = createApi({
     reducerPath: 'currencyApi',
-    baseQuery: fetchBaseQuery({ BASE_URL }),
+    baseQuery: fetchBaseQuery({  baseUrl: BASE_URL }),
     endpoints: (builder) => ({
         getCurrency: builder.query({
             query: ()=> createRequest('/coins')
