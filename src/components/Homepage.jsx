@@ -3,6 +3,8 @@ import millify from 'millify'
 import { Typography, Row, Col, Statistic } from 'antd'
 import { Link } from 'react-router-dom'
 import { useGetCurrencyQuery } from '../services/currencyApi'
+import Currencies from './Currencies'
+import News from './News'
 
 const { Title } = Typography
 
@@ -12,8 +14,7 @@ export default function Homepage() {
 
 
 
-  console.log(data)
-if(isFetching) return 'Loading...'
+  if(isFetching) return 'Loading...'
 
   return (
     <>
@@ -27,8 +28,14 @@ if(isFetching) return 'Loading...'
         </Row>
         <div className="home-heading-container">
           <Title level={2} className="home-title">Top 10 Currencies in the World</Title>
-          <Title level={3} className="show-more"><Link to="/currencies">Show</Link></Title>
+          <Title level={3} className="show-more"><Link to="/currencies">Show More</Link></Title>
         </div>
+        <Currencies simplified />
+        <div className="home-heading-container">
+          <Title level={2} className="home-title">Latest News</Title>
+          <Title level={3} className="show-more"><Link to="/currencies">Show More</Link></Title>
+        </div>
+        <News simplified />
     </>
   )
 }
