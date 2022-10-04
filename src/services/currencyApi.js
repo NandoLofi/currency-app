@@ -14,7 +14,7 @@ export const currencyApi = createApi({
     baseQuery: fetchBaseQuery({  baseUrl: BASE_URL }),
     endpoints: (builder) => ({
         getCurrency: builder.query({
-            query: ()=> createRequest('/coins')
+            query: (count)=> createRequest(`/coins?limit=${count}`)
         })
     })
 })

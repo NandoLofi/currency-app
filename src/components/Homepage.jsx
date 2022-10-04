@@ -9,7 +9,7 @@ import News from './News'
 const { Title } = Typography
 
 export default function Homepage() {
-  const { data, isFetching } = useGetCurrencyQuery();
+  const { data, isFetching } = useGetCurrencyQuery(10);
   const globalStats = data ?.data ?.stats
 
 
