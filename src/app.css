@@ -5,11 +5,11 @@ img {
 
 :root{
     --text-primary:#000;
-    --bgPrimary:#fff;
+    --bgPrimary: #355C7D;
    --bgSecondary: #F9F9F9;
-   --pink: #0071bd;
-   --light-blue: #e6f7ff;
-   --border: #d9d9d9;
+   --hoverColor: #F67280;
+   --light-blue: #355C7D;
+   --border: #355C7D9;
 }
 
 * {
@@ -19,7 +19,7 @@ img {
 }
 
 a:hover{
-    color: var(--pink) !important;
+    color: var(--hoverColor ) !important;
 }
 
 .app{
@@ -29,7 +29,7 @@ a:hover{
 
 .navbar{
     flex: 0.2;
-    background-color: rgb(0, 21, 41);
+    background-color: #355C7D;
 }
 
 .main{
@@ -46,11 +46,11 @@ a:hover{
     margin: 10px;
     height: 100vh;
     margin: 0px;
-    background-color: rgb(0, 21, 41);
+    background-color: #355C7D;
 }
 
 .logo-container{
-    background-color: #001529;
+    background-color: #355C7D;
     display: flex;
     padding: 20px;
     align-items: center;
@@ -60,7 +60,7 @@ a:hover{
     margin:0 0 0 15px;
 }
 .logo a{
-   color: white;
+   color: black;
 }
 .menu-control-container{
     display: none !important;
@@ -119,7 +119,7 @@ a:hover{
         position:fixed;
         width: 100%;
         z-index: 100;
-        background-color: var(--bgSecondary);
+        background-color: #355C7D;
     }
   
     .menu-control-container{
@@ -129,6 +129,7 @@ a:hover{
     .ant-menu{
         position: absolute;
         right: 0px;
+        background-color: #355C7D;
     }
     .home-title{
         font-size: 1.4rem !important;
