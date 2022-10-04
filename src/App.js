@@ -17,7 +17,7 @@ export default function App() {
             <Route path="/" element={<Homepage/>}/>
             <Route path="/exchanges" element={<Exchanges/>}/>
             <Route path="/currencies" element={<Currencies/>}/>
-            <Route path="/currencies/:coinId " element={<Details/>}/>
+            <Route path="/currencies/:coinId" element={<Details/>}/>
            </Routes>
           </div>
         </Layout>

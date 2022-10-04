@@ -17,7 +17,7 @@ export const currencyApi = createApi({
             query: (count)=> createRequest(`/coins?limit=${count}`)
         }),
         getCurrencyDetails: builder.query({
-            query: (coinId) => createRequest(`/coin/${coinId}`)
+            query: (uuid) => createRequest(`/coin/${uuid}`)
         })
     })
 })

@@ -20,7 +20,7 @@ console.log(data)
 
   return (
     <div>
-      CurrencyDetaul
+      CurrencyDetail
     </div>
   )
 }

@@ -18,10 +18,12 @@ export default function Currencies({ simplified }) {
 
   }, [currencyList, searchTerm])
 
+  console.log(currency)
+
   if (isFetching) return "Loading..."
 
 
-  console.log(currency)
+
   
   return (
     <>
@@ -33,8 +35,8 @@ export default function Currencies({ simplified }) {
 
       <Row gutter={[32, 32]} className='crypto-card-container'>
         {currency?.map((currency)=> (
-          <Col xs={24} sm={12} lg={6} className="crypto-card" key={currency.id}>
-            <Link to={`/currencies/${currency.id}`}>
+          <Col xs={24} sm={12} lg={6} className="crypto-card" key={currency.uuid}>
+            <Link to={`/currencies/${currency.uuid}`}>
               <Card title={`${currency.rank}. ${currency.name}`} extra={<img className='crypto-image' src={currency.iconUrl} alt={currency.name} />} hoverable>
                 <p> Price: {millify(currency.price)}</p>
                 <p>MarketCap: {millify(currency.marketCap)}</p>
