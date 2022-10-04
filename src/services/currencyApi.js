@@ -15,12 +15,15 @@ export const currencyApi = createApi({
     endpoints: (builder) => ({
         getCurrency: builder.query({
             query: (count)=> createRequest(`/coins?limit=${count}`)
+        }),
+        getCurrencyDetails: builder.query({
+            query: (coinId) => createRequest(`/coin/${coinId}`)
         })
     })
 })
 
 export const {
-    useGetCurrencyQuery,
+    useGetCurrencyQuery, useGetCurrencyDetailsQuery
 } = currencyApi
 
 // const options = {

@@ -4,13 +4,12 @@ import { Typography, Row, Col, Statistic } from 'antd'
 import { Link } from 'react-router-dom'
 import { useGetCurrencyQuery } from '../services/currencyApi'
 import Currencies from './Currencies'
-import News from './News'
 
 const { Title } = Typography
 
 export default function Homepage() {
   const { data, isFetching } = useGetCurrencyQuery(10);
-  const globalStats = data ?.data ?.stats
+  const globalStats = data?.data?.stats
 
 
 
@@ -32,10 +31,8 @@ export default function Homepage() {
         </div>
         <Currencies simplified />
         <div className="home-heading-container">
-          <Title level={2} className="home-title">Latest News</Title>
           <Title level={3} className="show-more"><Link to="/currencies">Show More</Link></Title>
         </div>
-        <News simplified />
     </>
   )
 }
