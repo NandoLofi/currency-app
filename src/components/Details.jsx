@@ -34,6 +34,7 @@ const genericStats = [
 ];
 
   return (
+    <>
     <Col className='coin-detail-container'>
       <Col className='coin-heading-container'>
         <Title level={2} className="coin-name">
@@ -43,6 +44,17 @@ const genericStats = [
           {cryptoDetails?.name} Price in USD
         </p>
       </Col>
+      <Select defaultValue="7d" className='select-timeperiod' placeholder="Select TimePeriod" onChange={(value)=> setTimeperiod(value)}>
+        {time.map((date)=> <Option key={date}>{date}</Option>)}
+      </Select>
     </Col>
+    <Col className='stats-container'>
+      <Col className="coin-value-statistics">
+        <Col className="coin-value-statistic-heading">
+          <Title level={3} className="coin-details-heading">{cryptoDetails?.name} Value Statistics</Title>
+        </Col>
+      </Col>
+    </Col>
+    </>
   )
 }
