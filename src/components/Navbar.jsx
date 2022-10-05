@@ -19,9 +19,6 @@ export default function Navbar() {
           <Menu.Item icon={<FundOutlined/>}>
             <Link to="/currencies"> Currencies </Link>
           </Menu.Item>
-          <Menu.Item icon={<MoneyCollectOutlined/>}>
-            <Link to="/exchanges">Exchanges </Link>
-          </Menu.Item>
         </Menu>
     </div>
   )

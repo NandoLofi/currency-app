@@ -4,7 +4,7 @@ import { useParams } from 'react-router-dom';
 import millify from 'millify';
 import { Col, Row, Typography, Select } from 'antd';
 import { MoneyCollectOutlined, DollarCircleOutlined, FundOutlined, ExclamationCircleOutlined, StopOutlined, TrophyOutlined, CheckOutlined, NumberOutlined, ThunderboltOutlined } from '@ant-design/icons';
-import { useCurrencyDetailsQuery, useGetCurrencyDetailsQuery } from '../services/currencyApi'
+import { useGetCurrencyDetailsQuery } from '../services/currencyApi'
 
 
 const {Title, Text } = Typography
@@ -12,11 +12,9 @@ const { Option } = Select;
 
 export default function Details() {
 const { coinId } = useParams();
-const [timPeriod, setTimeperiod] = useState('7d')
 const { data, isFetching } = useGetCurrencyDetailsQuery(coinId)
 const cryptoDetails = data?.data?.coin
 
-const time = ['3h', '24h', '7d', '30d', '1y', '3m', '3y', '5y'];
 
 const stats = [
   { title: 'Price to USD', value: `$ ${cryptoDetails?.btcPrice && millify(cryptoDetails?.btcPrice)}`, icon: <DollarCircleOutlined /> },
@@ -44,15 +42,36 @@ const genericStats = [
           {cryptoDetails?.name} Price in USD
         </p>
       </Col>
-      <Select defaultValue="7d" className='select-timeperiod' placeholder="Select TimePeriod" onChange={(value)=> setTimeperiod(value)}>
-        {time.map((date)=> <Option key={date}>{date}</Option>)}
-      </Select>
     </Col>
     <Col className='stats-container'>
       <Col className="coin-value-statistics">
         <Col className="coin-value-statistic-heading">
           <Title level={3} className="coin-details-heading">{cryptoDetails?.name} Value Statistics</Title>
+          <p>An Overview</p>
         </Col>
+        {stats.map(({icon, title, value})=> (
+          <Col className='coin-stats'> 
+            <Col className='coin-stats-name'>
+              <Text>{icon}</Text>
+              <Text>{title}</Text>
+            </Col>
+            <Text className='stats'>{value}</Text>
+          </Col>
+        ))}
+      </Col>
+      <Col className="other-stats-info">
+        <Col className="coin-value-statistic-heading">
+          <Title level={3} className="coin-details-heading">Other Statistics</Title>
+        </Col>
+        {genericStats.map(({icon, title, value})=> (
+          <Col className='coin-stats'> 
+            <Col className='coin-stats-name'>
+              <Text>{icon}</Text>
+              <Text>{title}</Text>
+            </Col>
+            <Text className='stats'>{value}</Text>
+          </Col>
+        ))}
       </Col>
     </Col>
     </>
