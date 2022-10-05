@@ -13,7 +13,7 @@ export default function Currencies({ simplified }) {
   const [searchTerm, setSearchTerm] = useState('')
   useEffect(()=>{
     const filteredData = currencyList?.data?.coins.filter((coin) => coin.name.toLowerCase().includes(searchTerm.toLowerCase()))
-
+    
     setCurrency(filteredData)
 
   }, [currencyList, searchTerm])

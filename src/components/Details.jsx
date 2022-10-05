@@ -1,18 +1,16 @@
-import React, { useState } from 'react';
-import HTMLReactParser from 'html-react-parser';
+import React from 'react';
 import { useParams } from 'react-router-dom';
 import millify from 'millify';
-import { Col, Row, Typography, Select } from 'antd';
-import { MoneyCollectOutlined, DollarCircleOutlined, FundOutlined, ExclamationCircleOutlined, StopOutlined, TrophyOutlined, CheckOutlined, NumberOutlined, ThunderboltOutlined } from '@ant-design/icons';
+import { Col, Typography } from 'antd';
+import { MoneyCollectOutlined, DollarCircleOutlined, FundOutlined, ExclamationCircleOutlined, StopOutlined, TrophyOutlined, CheckOutlined, NumberOutlined } from '@ant-design/icons';
 import { useGetCurrencyDetailsQuery } from '../services/currencyApi'
 
 
 const {Title, Text } = Typography
-const { Option } = Select;
 
 export default function Details() {
 const { coinId } = useParams();
-const { data, isFetching } = useGetCurrencyDetailsQuery(coinId)
+const { data } = useGetCurrencyDetailsQuery(coinId)
 const cryptoDetails = data?.data?.coin
 
 
