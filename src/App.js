@@ -1,7 +1,10 @@
 import React from 'react'
 import { Route, Link, Routes } from 'react-router-dom'
 import { Layout, Typography, Space } from 'antd'
-import { Navbar, Homepage, Currencies, Details } from './components/index.js'
+import Navbar from './components/Navbar.jsx'
+import Currencies from './components/Currencies.jsx'
+import Details from './components/Details.jsx'
+import Homepage from './components/Homepage.jsx'
 import './app.css'
 
 export default function App() {
